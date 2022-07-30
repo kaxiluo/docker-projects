@@ -1,0 +1,37 @@
+version: "3.8"
+
+networks: 
+  default:
+    name: pdocker_base-bridge
+    external: true
+
+services: 
+########Projects##############
+    # industrious-api:
+    #     build:
+    #       context: ./industrious-api
+    #     volumes:
+    #     - ${APP_CODE_PATH_HOST}/CQGG/JOB/industrious-api:/workspace
+    #     tty: true
+    #     expose:
+    #     - "9501"         
+    # magento:
+    #     build:
+    #       context: ./magento
+    #     tty: true
+    #     expose:
+    #     - "9000"     
+    #     ports:
+    #     - "2201:22"
+    #     - "8001:8001"
+    #     networks:
+    #       default:
+    #         aliases:
+    #           - magento.cqggedm.local
+    wordpress-blog:
+        build:
+          context: ./wordpress-blog
+        tty: true  
+        ports:
+        - "680:80"
+        - "6443:443"      
