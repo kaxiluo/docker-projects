@@ -120,7 +120,9 @@ RUN cd /etc/nginx \
 
 # 网站提示：您的PHP似乎没有安装运行WordPress所必需的MySQL扩展。
 # 安装php扩展
-RUN apt install php7.4-mysqli php7.4-mbstring && service php7.4-fpm restart
+RUN apt install php7.4-mysqli php7.4-mbstring \
+        php7.4-curl php7.4-imagick  php7.4-zip  php7.4-dom  php7.4-intl \
+    && service php7.4-fpm restart
 
 # 网站提示：无法写入wp-config.php文件。您可以手工创建wp-config.php文件，并将以下文字粘贴于其中。
 # 不想手动写入，一看就是权限问题
