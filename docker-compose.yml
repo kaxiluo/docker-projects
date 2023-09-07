@@ -7,27 +7,27 @@ networks:
 
 services: 
 ########Projects##############
-    # industrious-api:
-    #     build:
-    #       context: ./industrious-api
-    #     volumes:
-    #     - ${APP_CODE_PATH_HOST}/CQGG/JOB/industrious-api:/workspace
-    #     tty: true
-    #     expose:
-    #     - "9501"         
-    # magento:
-    #     build:
-    #       context: ./magento
-    #     tty: true
-    #     expose:
-    #     - "9000"     
-    #     ports:
-    #     - "2201:22"
-    #     - "8001:8001"
-    #     networks:
-    #       default:
-    #         aliases:
-    #           - magento.cqggedm.local
+    industrious-api:
+        build:
+          context: ./industrious-api
+        volumes:
+        - ${APP_CODE_PATH_HOST}/Outsource/CQGG/JOB/industrious-api:/workspace
+        tty: true
+        expose:
+        - "9501"         
+    magento:
+        build:
+          context: ./magento
+        tty: true
+        expose:
+        - "9000"     
+        ports:
+        - "2201:22"
+        - "8001:8001"
+        networks:
+          default:
+            aliases:
+              - magento.cqggedm.local
     wordpress-blog:
         build:
           context: ./wordpress-blog
@@ -35,4 +35,17 @@ services:
         ports:
         - "680:80"
         - "6443:443"
-        - "63306:3306"        
+        - "63306:3306"
+    ecas:
+        build:
+          context: ./ecas
+        tty: true
+        expose:
+        - "9000"     
+        ports:
+        - "2202:22"
+        - "8002:80"
+        networks:
+          default:
+            aliases:
+              - ecas.local                

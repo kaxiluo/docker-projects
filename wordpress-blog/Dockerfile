@@ -80,7 +80,7 @@ RUN cd /tmp \
 # 启动 nginx php-fpm mysql
 RUN service nginx start \
     && service php7.4-fpm start \ 
-    && service start mysql
+    && service mysql start
 
 # RUN systemctl start nginx \
 #     && systemctl start php7.4-fpm  \ 
