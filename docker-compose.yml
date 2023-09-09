@@ -19,6 +19,7 @@ services:
         build:
           context: ./magento
         tty: true
+        entrypoint: bash
         expose:
         - "9000"     
         ports:
@@ -40,6 +41,7 @@ services:
         build:
           context: ./ecas
         tty: true
+        entrypoint: bash
         expose:
         - "9000"     
         ports:
