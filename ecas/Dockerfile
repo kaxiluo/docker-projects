@@ -6,8 +6,7 @@ RUN set -xe \
     && apt-get update -y \
     && apt-get install -y --no-install-recommends \
        openssh-server \
-       nginx \
-    && docker-php-ext-install opcache
+       nginx
 
 RUN mkdir -p /var/run/sshd \
   && sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" /etc/ssh/sshd_config \

@@ -2,7 +2,7 @@
 
 /usr/sbin/sshd -D &
 
-/usr/sbin/nginx
+/usr/sbin/nginx &
 
 php-fpm
 
